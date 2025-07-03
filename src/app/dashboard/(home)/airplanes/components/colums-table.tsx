@@ -7,6 +7,7 @@ import { Pencil } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { getUrlFile } from "@/lib/supabase"
+import DeleteAirplane from "./delete-airplane"
 
 export const columns: ColumnDef<Airplane> [] = [
     {
@@ -41,6 +42,7 @@ export const columns: ColumnDef<Airplane> [] = [
                         EDIT 
                         </Link>
                     </Button>
+                    <DeleteAirplane id={plane.id}/> 
 
                 </div>
             )

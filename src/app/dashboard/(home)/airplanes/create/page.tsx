@@ -13,7 +13,7 @@ const CreateAirplanePage: FC = () => {
                 Tambah Data Airplane
             </div>
         </div>
-        <FormAirplane/>
+        <FormAirplane type="ADD"/>
      </div>
     )
 }
