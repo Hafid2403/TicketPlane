@@ -3,11 +3,10 @@
 import React, { useActionState, type FC } from "react";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { ActionResult } from "@/app/dashboard/(auth)/signin/form/action";
 import { saveAirplane, updateAirplane } from "../lib/actions";
-import { useFormStatus } from "react-dom";
 import type { Airplane } from "@prisma/client";
+import SubmitButtonForm from "../../component/submit-form-button";
 
 interface FormAirplaneProps {
   type?: "ADD" | "EDIT";
@@ -19,15 +18,6 @@ const initialFormState: ActionResult = {
   errorDesc: [],
 };
 
-const SubmitButton = () => {
-  const { pending } = useFormStatus();
-
-  return (
-    <Button disabled={pending} className="w-full">
-      Submit
-    </Button>
-  );
-};
 
 const FormAirplane: FC<FormAirplaneProps> = ({ type, defaultValues }) => {
   const updateAirplaneWithId = (_state: ActionResult, formData: FormData) => updateAirplane(null, defaultValues?.id!!, formData)
@@ -66,7 +56,7 @@ const FormAirplane: FC<FormAirplaneProps> = ({ type, defaultValues }) => {
           required
         />
       </div>
-      <SubmitButton />
+      <SubmitButtonForm />
     </form>
   );
 };

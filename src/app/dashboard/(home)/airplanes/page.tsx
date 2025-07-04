@@ -5,6 +5,12 @@ import Link from "next/link";
 import { DataTable } from "@/components/ui/data-table";
 import { columns } from "./components/colums-table";
 import { getAirplane } from "./lib/data";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+    title: 'Dashboard | Airplanes'
+}
 
 
 export default async function AirplanePage () {
